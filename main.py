@@ -4,7 +4,7 @@ from random import randint
 def  draw (point):
     canvas.create_oval(point['x'], point['y'], 
     point['x'], point['y'], 
-    width = 3,
+    width = 0.1,
     fill = 'green')
 
 root = tkinter.Tk()
@@ -25,5 +25,17 @@ y=(first['y']+second['y'])/2
 current={'x':x, 'y':y}
 
 draw (current)
+
+for i in range(1000000):
+
+    first=current
+    second=points [randint(0,2)]
+
+    x=(first['x']+second['x'])/2
+    y=(first['y']+second['y'])/2
+    current={'x':x, 'y':y}
+
+
+    draw (current)
 
 root.mainloop()
